@@ -1,0 +1,8 @@
+.customSwitch {
+  > label {
+    margin-bottom: 0px;
+    &:first-child {
+      margin-right: 0.5rem;
+    }
+  }
+}

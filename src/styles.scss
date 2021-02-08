@@ -3,3 +3,12 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
+.loading {
+  cursor: progress !important;
+}
+body {
+  background-color: #eee;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+}

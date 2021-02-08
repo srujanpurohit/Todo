@@ -1,0 +1,72 @@
+ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  li {
+    list-style-type: none;
+    font-size: 1.25em;
+    &#logout {
+      cursor: pointer;
+    }
+  }
+}
+.cardWrapper {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  .card {
+    cursor: pointer;
+    transition: 0.25s ease-out;
+    &.content {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      &:hover {
+        transform: scale(1.01);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
+      &.done {
+        opacity: 0.75;
+        text-decoration: line-through;
+        background-color: rgba(0, 255, 0, 0.15);
+      }
+      .card-body {
+        .card-title {
+          padding-right: 1.25rem;
+        }
+        .card-text {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
+        small {
+          width: 100%;
+          display: block;
+        }
+      }
+      svg {
+        color: var(--green);
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        height: 1.5rem;
+      }
+    }
+    &.add {
+      background-color: #f5f5f5;
+      border-style: dashed;
+      transform: scale(0.9);
+      .card-body {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        color: #bbb;
+        padding: 33%;
+      }
+      &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+}

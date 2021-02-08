@@ -1,0 +1,58 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <div class="row">
+    <div class="col-sm-12">
+      <label class="form-label" for="username">Username *</label>
+    </div>
+    <div class="col-sm-12">
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        formControlName="username"
+        placeholder="Srujan"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          loginForm.get('username').hasError('required') &&
+          loginForm.get('username').touched
+        "
+      >
+        Username is required.
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <label class="form-label" for="password">Password *</label>
+    </div>
+    <div class="col-sm-12">
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        formControlName="password"
+        placeholder="1234"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          loginForm.get('password').hasError('required') &&
+          loginForm.get('password').touched
+        "
+      >
+        Password is required.
+      </span>
+    </div>
+  </div>
+  <p class="text-danger" *ngIf="error">{{ error }}</p>
+  <div class="btnWrapper">
+    <button
+      [ngClass]="{ 'btn btn-primary': true, loading: loading }"
+      [disabled]="loginForm.invalid"
+      id="loginBtn"
+    >
+      Login
+    </button>
+  </div>
+</form>
